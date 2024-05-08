@@ -1,0 +1,359 @@
+@import "fonts";
+
+:root{
+    /*FONTS*/
+    --font-Inter-Regular: 'Inter-Regular';
+    --font-Inter-Medium: 'Inter-Medium';
+    --font-Inter-Bold: 'Inter-Bold';
+    --font-Inter-ExtraBold: 'Inter-ExtraBold';
+    --font-Inter-Black: 'Inter-Black';
+
+    /*COLORS*/
+    --site-yellow: #E0FF22;
+    --site-orange : #EA9F1B;
+    --site-blue: #336FFD;
+    --site-pink: #C340DD;
+    --site-white: #ffffff;
+    --site-purple: #695EF1;
+    --site-black: #000000;
+}
+
+body{
+    font-family: 'Inter-Regular', sans-serif;
+    overflow-x: hidden;
+}
+
+.topbar{
+    background-color: var(--site-purple);
+    color: var(--site-black);
+    font-size: 14px;
+    font-family: 'Inter-ExtraBold', sans-serif;
+    font-weight: 600;
+    line-height: normal;
+
+    @media all and (min-width: 1199px){
+        height: 38px;
+    }
+
+    .location{
+        img{
+            margin-left: -5px;
+        }
+    }
+
+    .divider{
+        height: 27px;
+        width: 1px;
+        background-color: var(--site-black);
+        margin: 0 22px;
+    }
+}
+
+.navbar{
+    z-index: 99999;
+    background-color: var(--site-white) !important;
+
+    @media all and (min-width: 1024px){
+        height: 87px;
+    }
+
+    .nav-item{
+        font-size: 16px;
+        font-weight: bold;
+        font-style: normal;
+        line-height: normal;
+        padding: 0 10px;
+
+        @media all and (max-width: 991px){
+            font-size: 20px;
+        }
+
+        @media all and (min-width: 992px) and (max-width: 1199px){
+            padding: 0;
+        }
+
+        .nav-link{
+            color: var(--site-black) !important;
+
+            &:hover{
+                color: var(--site-purple) !important;
+            }
+        }
+
+        .dropdown-menu{
+            li{
+                font-size: 14px;
+                font-style: normal;
+                line-height: normal;
+
+                .dropdown-item{
+
+                    &:hover{
+                        background: none;
+                        color: var(--site-purple);
+                    }
+                }
+
+                @media all and (max-width: 767px) {
+                    text-align: center;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .btn-inscricao{
+        background-color: var(--site-purple);
+        color: var(--site-white);
+        font-size: 14px;
+        font-style: normal;
+        line-height: normal;
+        border: 0;
+        padding: 16px 20px;
+        border-radius: 8px;
+
+        &:hover{
+            background-color: var(--site-orange);
+            color: var(--site-black);
+        }
+    }
+
+    .navbar-toggler{
+        border: 1px solid var(--site-black);
+
+        &:focus{
+            box-shadow: none;
+        }
+    }
+
+}
+
+/************* FOOTER **************/
+footer{
+    padding: 50px 15px;
+    background-color: var(--site-black);
+    color: var(--site-white);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+
+    a{
+        color: var(--site-white);
+        text-decoration: none;
+        transition: all 0.3s;
+
+        &:hover{
+            color: var(--site-orange);
+        }
+    }
+
+    ul{
+        margin: 0 0 0 30px;
+        padding: 0;
+
+        li{
+            list-style: none;
+            margin-left: 16px;
+        }
+    }
+}
+
+/************ WHATSAPP FLUTUANTE **********/
+@keyframes shake {
+    4.5%, 10.5% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    5% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    5.5% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    6% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    6.5% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    7% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    7.5% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    8% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    8.5% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    9% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    9.5% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    10% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+.wa-flutuante{
+
+    .icone-wa{
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 1;
+        animation: shake 10s infinite;
+
+        @media all and (max-width: 767px){
+            width: 20px;
+            height: 20px;
+            bottom: 55px;
+            right: 55px;
+        }
+    }
+
+    .content-wa{
+        max-width: 400px;
+        width: 100%;
+        position: fixed;
+        right: 20px;
+        bottom: 100px;
+        display: none;
+        z-index: 3;
+
+        @media all and (max-width: 767px){
+            width: 90%;
+            right: 5%;
+            bottom: 85px;
+        }
+
+        .card{
+            width: 100%;
+            border: 0;
+            border-radius: 10px;
+
+            .card-header{
+                background-color: #0b6156;
+                border-radius: 10px 10px 0 0;
+
+                h4{
+                    color: var(--site-white);
+                    font-size: 18px;
+                    margin-bottom: 0;
+                }
+
+                span{
+                    color: var(--site-white);
+                    font-size: 14px;
+                }
+
+                .btn-close-wa{
+                    color: var(--site-white);
+                    background-color: transparent;
+                    border: 0;
+                    font-weight: bolder;
+                }
+            }
+
+            .card-body{
+                padding: 30px;
+
+                p{
+                    font-size: 14px;
+                }
+
+            }
+
+            .card-footer{
+                background-color: transparent;
+                border: 0;
+
+                .btn-success{
+                    padding: 10px 25px;
+                    background-color: #0b6156;
+
+                    &:hover{
+                        background-color: var(--site-blue);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.overlay-wa-flutuante{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    display: none;
+    z-index: 2;
+}
+
+
+/* Container DIV - automatically generated */
+.simply-scroll-container {
+    position: relative;
+}
+
+/* Clip DIV - automatically generated */
+.simply-scroll-clip {
+    position: relative;
+    overflow: hidden;
+}
+
+/* UL/OL/DIV - the element that simplyScroll is inited on
+Class name automatically added to element */
+.simply-scroll-list {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.simply-scroll-list li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.simply-scroll-list li img {
+    border: none;
+    display: block;
+}
+
+/* Custom class modifications - adds to / overrides above
+
+.simply-scroll is default base class */
+
+/* Container DIV */
+.simply-scroll {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+}
+
+/* Clip DIV */
+.simply-scroll .simply-scroll-clip {
+    width: 100%;
+    height: auto;
+}
+
+/* Explicitly set height/width of each list item */
+.simply-scroll .simply-scroll-list li {
+    float: left; /* Horizontal scroll only */
+    width: 350px;
+    height: auto;
+}
+
+@media all and (max-width: 767px){
+    .simply-scroll .simply-scroll-list li {
+        width: 250px;
+    }
+}
